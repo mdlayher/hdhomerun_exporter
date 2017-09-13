@@ -1,0 +1,20 @@
+---
+GENERATOR:
+  PackageName: libhdhomerun
+
+PARSER:
+  IncludePaths: [/usr/include]
+  SourcesPaths: [hdhomerun_pkt.h]
+
+TRANSLATOR:
+  ConstRules:
+    defines: expand
+    enum: expand
+  Rules:
+    const:
+      - {transform: lower}
+      - {action: accept, from: "(?i)hdhomerun_"}
+      - {action: replace, from: "(?i)hdhomerun_", to: _}
+      - {transform: export}
+    post-global:
+      - {load: snakecase}
