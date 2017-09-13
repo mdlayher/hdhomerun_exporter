@@ -7,7 +7,8 @@ HDHomeRun devices. MIT Licensed.
 Configuration
 -------------
 
-The `hdhomerun_exporter` is configured in a similar way to the official Prometheus
+The `hdhomerun_exporter`'s Prometheus scrape configuration (`prometheus.yml`) is
+configured in a similar way to the official Prometheus
 [`blackbox_exporter`](https://github.com/prometheus/blackbox_exporter).
 
 The `targets` list under `static_configs` should specify the addresses of any
